@@ -20,6 +20,16 @@ add_definitions(-DHBLJ_LOG)
 # set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 # set(CMAKE_C_FLAGS_Release "${CMAKE_C_FLAGS_Release} -O3")
 
+# 分别设置CMAKE_CXX_FLAGS_DEBUG和CMAKE_CXX_FLAGS_RELEASE
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11 -Wl,-rpath=../lib")
+# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11 -g")
+
+# 上面的设置两个都有-std=c++11，这个选项是一个公共的选项，不管是Release还是Debug都需要设置。
+# 这种情况还可以把公共的设置放在CMAKE_CXX_FLAGS变量里面
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -Wl,-rpath=../lib")
+# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -g")
+
 
 set(HOME ${PROJECT_SOURCE_DIR})
 set(OUTPUTPATH ${HOME}/bin)
