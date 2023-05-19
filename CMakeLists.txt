@@ -16,6 +16,10 @@ add_definitions(-DHBLJ_LOG)
 # CMAKE_CXX_FLAGS_RELEASE = -O3 -DNDEBUG
 # CMAKE_CXX_FLAGS_RELWITHDEBINFO = -O2 -g -DNDEBUG
 
+# 这里CMAKE_C_FLAGS_DEBUG默认只是有一个“-g”，所以，可以在此基础上添加优化选项
+# set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
+# set(CMAKE_C_FLAGS_Release "${CMAKE_C_FLAGS_Release} -O3")
+
 
 set(HOME ${PROJECT_SOURCE_DIR})
 set(OUTPUTPATH ${HOME}/bin)
